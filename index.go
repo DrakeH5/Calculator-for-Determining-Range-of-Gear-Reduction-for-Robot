@@ -46,7 +46,7 @@ func step3(torqForMaxForce float64) {
 	scanner.Scan()
 	motorStallTorque, nmb := strconv.ParseFloat(scanner.Text(), 64)
 	if nmb == nil {
-		gearReductionNeeded := torqForMaxForce * motorStallTorque
+		gearReductionNeeded := torqForMaxForce / motorStallTorque
 		step4(gearReductionNeeded)
 	} else {
 		step3(torqForMaxForce)
